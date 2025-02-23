@@ -1,0 +1,7 @@
+<div class="add-todo-container">
+    <h2>Add New To-Do</h2>
+    <form class="add-todo-form" (ngSubmit)="addTodo()">
+      <input [(ngModel)]="newTodo.title" name="title" placeholder="Enter task" required />
+      <button type="submit">Add</button>
+    </form>
+  </div>

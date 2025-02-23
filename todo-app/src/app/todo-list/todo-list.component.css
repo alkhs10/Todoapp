@@ -1,0 +1,132 @@
+
+.todo-list-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+ 
+  .search-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .search-section input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .search-section button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .search-section button:hover {
+    background-color: #0056b3;
+  }
+  
+ 
+  .search-result {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #e9f5ff;
+    border-radius: 4px;
+    border: 1px solid #007bff;
+  }
+  
+  .search-result h3 {
+    margin-top: 0;
+    color: #007bff;
+  }
+  
+  .search-result p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .search-result button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .search-result button:hover {
+    background-color: #218838;
+  }
+  
+ 
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  li span {
+    flex: 1;
+    font-size: 16px;
+  }
+  
+  li span.done {
+    text-decoration: line-through;
+    color: #888;
+  }
+  
+  li button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  li button.mark-done {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  li button.mark-done:hover {
+    background-color: #218838;
+  }
+  
+  li button.delete {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  li button.delete:hover {
+    background-color: #c82333;
+  }

@@ -1,0 +1,26 @@
+<div class="todo-list-container">
+    <h2>To-Do List</h2>
+  
+   
+    <div class="search-section">
+      <input [(ngModel)]="searchId" placeholder="Enter task ID" type="number" />
+      <button (click)="searchTodoById()">Search</button>
+    </div>
+  
+    
+    <div *ngIf="searchedTodo" class="search-result">
+      <h3>Search Result:</h3>
+      <p>{{ searchedTodo.title }} - {{ searchedTodo.isDone ? 'Done' : 'Pending' }}</p>
+      <button (click)="markSearchedTodoAsDone()" *ngIf="!searchedTodo?.isDone">Mark as Done</button>
+      <button (click)="deleteSearchedTodo()">Delete</button>
+    </div>
+  
+   
+    <ul>
+      <li *ngFor="let todo of todos">
+        <span [class.done]="todo.isDone">{{ todo.title }}</span>
+        <button class="mark-done" (click)="markAsDone(todo.id)" *ngIf="!todo.isDone">Mark as Done</button>
+        <button class="delete" (click)="deleteTodo(todo.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
