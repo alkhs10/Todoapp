@@ -31,6 +31,7 @@ This will build the frontend and backend Docker images and start the containers.
 #Access the Application:
 
 Frontend: Visit http://localhost:8080/todo-app/ to view the Todo application interface.
+
 Backend (API): Visit http://localhost:5108/api/Todo to interact with the backend API.
 
 #Additional Notes:
