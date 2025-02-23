@@ -13,9 +13,11 @@ Technologies Used:
 How to run the app:
 
 First download the repository: git clone https://github.com/alkhs10/Todoapp.git
+
 Move inside the main folder : cd Todoapp
 
 Now we have to install the dependencies defined in my project's package.json file.
+
 cd todo-app
 npm install 
 cd ..
