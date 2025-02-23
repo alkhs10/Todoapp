@@ -19,7 +19,9 @@ Move inside the main folder : cd Todoapp
 Now we have to install the dependencies defined in my project's package.json file.
 
 cd todo-app
+
 npm install 
+
 cd ..
 
 
