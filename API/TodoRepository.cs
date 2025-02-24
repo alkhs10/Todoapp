@@ -23,11 +23,25 @@ public class TodoRepository
         return await _context.TodoItems.FindAsync(id);
     }
 
-    public async Task AddTodoAsync(TodoItem todo)
+   public async Task<bool> AddTodoAsync(TodoItem todo)
+{
+    
+    bool exists = await _context.TodoItems.AnyAsync(t => t.Title == todo.Title);
+    
+    if (exists)
     {
-        _context.TodoItems.Add(todo);
-        await _context.SaveChangesAsync();
+        return false; 
     }
+
+    _context.TodoItems.Add(todo);
+    await _context.SaveChangesAsync();
+    return true;
+}
+
+public async Task<TodoItem?> GetTodoByTitleAsync(string title)
+{
+    return await _context.TodoItems.FirstOrDefaultAsync(t => t.Title == title);
+}
 
     public async Task MarkTodoAsDoneAsync(int id)
     {

@@ -33,11 +33,18 @@ public class TodoController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<TodoItem>> AddTodo(TodoItem todo)
+public async Task<ActionResult<TodoItem>> AddTodo(TodoItem todo)
+{
+    bool isAdded = await _repository.AddTodoAsync(todo);
+
+    if (!isAdded)
     {
-        await _repository.AddTodoAsync(todo);
-        return CreatedAtAction(nameof(GetTodo), new { id = todo.Id }, todo);
+        return Conflict("Task already exist.");
     }
+
+    return CreatedAtAction(nameof(GetTodo), new { id = todo.Id }, todo);
+}
+
 
     [HttpPut("{id}/done")]
     public async Task<IActionResult> MarkAsDone(int id)
