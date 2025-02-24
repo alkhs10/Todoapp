@@ -15,11 +15,6 @@ builder.Services.AddSwaggerGen(c =>
         Title = "Todo API",
         Version = "v1",
         Description = "API for managing todo items",
-        Contact = new OpenApiContact
-        {
-            Name = "Your Name",
-            Email = "contact@example.com"
-        }
     });
 });
 
