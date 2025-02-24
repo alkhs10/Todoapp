@@ -18,7 +18,7 @@ export class TodoListComponent implements OnInit {
   constructor(private todoService: TodoService) {}
 
   ngOnInit(): void {
-    // Subscribe to the todos observable so the list is updated live whenever it changes
+  
     this.todoService.todos$.subscribe({
       next: (todos) => {
         this.todos = todos;
@@ -26,7 +26,7 @@ export class TodoListComponent implements OnInit {
       error: (err) => console.error('Failed to load todos:', err),
     });
 
-    // Optionally, you can call getAllTodos initially to fetch todos if needed
+   
     this.todoService.reloadTodos();
   }
 
@@ -50,7 +50,7 @@ export class TodoListComponent implements OnInit {
       this.todoService.markAsDone(this.searchedTodo.id).subscribe({
         next: () => {
           console.log('Todo marked as done');
-          this.searchTodoById();  // Refresh the searched todo after marking as done
+          this.searchTodoById();  
         },
         error: (err) => console.error('Failed to mark todo as done:', err),
       });
@@ -73,7 +73,7 @@ export class TodoListComponent implements OnInit {
     this.todoService.deleteTodo(id).subscribe({
       next: () => {
         console.log('Todo deleted');
-        // No need to call loadTodos as the subscription will automatically update the list
+        
       },
       error: (err) => console.error('Failed to delete todo:', err),
     });
@@ -83,7 +83,7 @@ export class TodoListComponent implements OnInit {
     this.todoService.markAsDone(id).subscribe({
       next: () => {
         console.log('Todo marked as done');
-        // No need to call loadTodos as the subscription will automatically update the list
+       
       },
       error: (err) => console.error('Failed to mark todo as done:', err),
     });
