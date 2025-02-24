@@ -38,11 +38,6 @@ public class TodoRepository
     return true;
 }
 
-public async Task<TodoItem?> GetTodoByTitleAsync(string title)
-{
-    return await _context.TodoItems.FirstOrDefaultAsync(t => t.Title == title);
-}
-
     public async Task MarkTodoAsDoneAsync(int id)
     {
         var todo = await _context.TodoItems.FindAsync(id);
